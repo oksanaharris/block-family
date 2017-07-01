@@ -1,16 +1,27 @@
+$dark: yellow;
+$light: white;
+$bright: magenta;
+$padding: 10%;
+
+@mixin block_font($block_font_size: 20px, $block_font_color: $light){
+  font-size: $block_font_size;
+  color: $block_font_color;
+}
+
 // Resets, Clearfix, etc
+
+@import 'partials/_reset';
+@import 'partials/_clearfix';
 
 // Variables
 
 // Media Query Ranges
 
-// Mixins
-
-// Styles
 body{
+  @include block_font();
   background-color: orange;
   text-align: center;
-  color: #EEE;
+  // color: #EEE;
 }
 
 h1, h2, h3, h4{
@@ -24,6 +35,24 @@ h1{
 h2{
 
 }
+
+@media screen and (min-width: 600px){ //medium
+  body{
+    background-color: blue;
+    @include block_font(24px, $bright);
+  }
+}
+
+@media screen and (min-width: 900px){ //medium
+  body{
+    background-color: purple;
+    @include block_font(28px, $dark);
+  }
+}
+
+// Mixins
+
+// Styles
 
 
 .block_family{
